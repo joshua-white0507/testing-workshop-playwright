@@ -12,6 +12,16 @@ test(`Find Calculate Holiday Entitlement`, async ({ start }) => {
     await start.checkPageLoads();
 });
 
+test(`Start button links to the correct page`, async ({ start }) => {
+});
+
 test(`Click start button`, async ({ start }) => {
     await start.clickStartButton();
 });
+
+test(`Start button correctly links to the next page`, {
+    tag: '@happy-path',
+    },async ({ start }) => {
+    await start.checkHappyPath();
+});
+

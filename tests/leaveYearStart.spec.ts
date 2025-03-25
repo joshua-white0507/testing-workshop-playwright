@@ -1,9 +1,12 @@
 import {expect, test} from "@playwright/test";
 
 
-test(`Happy path!`, async ({ page }) => {
+test(`Happy path!`, {
+    tag: '@happy-path',
+    },
+     async ({ page }) => {
     // TODO...
-});
+})
 
 test(`Given an empty date field page loads error box`, async ({ page }) => {
     await page.goto('https://www.gov.uk/calculate-your-holiday-entitlement/y/irregular-hours-and-part-year');
@@ -15,7 +18,7 @@ test(`Given an empty date field page loads error box`, async ({ page }) => {
     
     // Continue me!
     // How would you click the continue button?
-});
+})
 
 test(`Given an invalid date page loads error box`, async ({ page }) => {
     await page.goto('https://www.gov.uk/calculate-your-holiday-entitlement/y/irregular-hours-and-part-year');

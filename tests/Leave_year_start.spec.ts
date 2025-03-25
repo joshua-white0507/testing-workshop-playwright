@@ -1,7 +1,7 @@
 import {expect, test} from "@playwright/test";
 
 
-test(`Inputing future `, async ({ page }) => {
+test(`Inputing future date for when the leave year starts `, async ({ page }) => {
     await page.goto('https://www.gov.uk/calculate-your-holiday-entitlement/y/irregular-hours-and-part-year');
     await page.getByLabel('Yes').check();
     

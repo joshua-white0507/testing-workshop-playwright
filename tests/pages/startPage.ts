@@ -4,7 +4,7 @@ import landingPage_content from "../content/startPage_content";
 export class StartPage {
     readonly page: Page;
     private readonly title: string;
-git
+
     constructor(page: Page) {
         this.page = page;
         this.title = `.govuk-heading-xl`;

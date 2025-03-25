@@ -1,10 +1,7 @@
 import {expect, test} from "@playwright/test";
 
 
-test(`Happy path!`, {
-    tag: '@happy-path',
-    },
-     async ({ page }) => {
+test(`Happy path!`, async ({ page }) => {
     // TODO...
 })
 

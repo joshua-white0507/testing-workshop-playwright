@@ -1,10 +1,10 @@
 import { expect, type Page } from '@playwright/test';
-import landingPage_content from "../content/startPage_content";
+import landingPage_content from "../content/startPageContent";
 
 export class StartPage {
     readonly page: Page;
     private readonly title: string;
-git
+
     constructor(page: Page) {
         this.page = page;
         this.title = `.govuk-heading-xl`;
@@ -15,7 +15,6 @@ git
 
         await Promise.all([
             expect(this.page.locator(this.title)).toHaveText(landingPage_content.pageTitle),
-            // Continue checking the elements after adding them to the content file!
         ]);
     }
 

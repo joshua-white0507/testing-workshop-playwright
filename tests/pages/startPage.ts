@@ -50,9 +50,11 @@ export class StartPage {
 
     async checkLeaveYearStart(): Promise<void> {
         await this.page.goto('https://www.gov.uk/calculate-your-holiday-entitlement/y/irregular-hours-and-part-year');
-        await this.page.locator("#response-0").fill('10');
-        await this.page.locator("#response-1").fill('10');
-        await this.page.locator("#response-2").fill('2026');
+       
+        const inputs = [{id: "#response-0", input: '10'}, {id: "#response-1", input: '10'}, {id: "#response-2", input: '2026'}]
+        for (let i = 0; i < inputs.length; i++) {
+            await this.page.locator(inputs[i].id).fill(inputs[i].input);
+        }
         await this.page.getByText('Continue').click();
     }
     

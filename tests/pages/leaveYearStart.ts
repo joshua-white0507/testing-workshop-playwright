@@ -33,10 +33,10 @@ export class leaveYearStartPage {
         ]);
     }
 
-    async checkAnInvalidDateCreatesErrorField(): Promise<void> {
+    async checkAnInvalidDateCreatesErrorField(fieldId: string): Promise<void> {
         await this.page.goto(this.url);
         await this.page.getByRole('button', { name: leaveYearStartPageContent.buttonName }).click()        
-        await this.page.locator('#response-0').fill("test");
+        await this.page.locator(fieldId).fill("test");
 
         await Promise.all([
             expect(this.page.locator(this.errorBoxId)).toHaveText(leaveYearStartPageContent.errorMessage)

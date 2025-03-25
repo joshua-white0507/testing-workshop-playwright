@@ -8,25 +8,14 @@ const test = base.extend<{ leaveYear: leaveYearStartPage }>({
     }
 });
 
-test(`Happy path!`, async ({ page }) => {
-    // TODO...
-})
-
 test(`Given an invalid date page loads error box`, async ({ leaveYear }) => {
-    await leaveYear.checkAnInvalidDateCreatesErrorField();
+    const fieldIds = ['#response-0', '#response-1', '#response-2'];
+
+    for (let i = 0; i < fieldIds.length; ++i) {
+        await leaveYear.checkAnInvalidDateCreatesErrorField(fieldIds[i]);
+    }
 });
 
 test(`Given an empty date field page loads error box`, async ({ leaveYear }) => {
     await leaveYear.checkAnEmptyDateCreatesErrorField();
-});
-
-
-
-
-
-test(`Click continue`, async ({ page }) => {
-    //await page.getByText('Continue').click();
-
-    // Continue me!
-    // How would you click the continue button?
 });

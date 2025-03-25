@@ -25,4 +25,26 @@ test(`Start button correctly links to the next page`, {
     await start.checkHappyPath();
 });
 
+test(`Irregular Hours Page test`, {
+    tag: '@happy-path',
+    },async ({ start }) => {
+    await start.checkIrregularHoursPath();
+});
 
+test(`Check for when the year leave starts`, {
+    tag: '@happy-path',
+    },async ({ start }) => {
+    await start.checkLeaveYearStart();
+});
+
+test(`Check for Employee hours worked`, {
+    tag: '@happy-path',
+    },async ({ start }) => {
+    await start.checkHoursEmployeeWorked();
+});
+
+test(`The results page reflect the correct results`, {
+    tag: '@happy-path',
+    },async ({ start }) => {
+    await start.checkResultsPage();
+});

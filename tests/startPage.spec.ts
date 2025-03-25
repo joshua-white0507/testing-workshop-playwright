@@ -44,7 +44,7 @@ test(`Check for Employee hours worked`, {
 });
 
 test(`The results page reflect the correct results`, {
-    tag: '@happy-path',
+    tag: '@results-path',
     },async ({ start }) => {
     await start.checkResultsPage();
 });

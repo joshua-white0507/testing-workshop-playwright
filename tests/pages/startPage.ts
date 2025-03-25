@@ -65,14 +65,10 @@ export class StartPage {
     async checkResultsPage(): Promise<void> {   
         await this.page.goto('https://www.gov.uk/calculate-your-holiday-entitlement/y/irregular-hours-and-part-year/2026-10-10/8.0'); 
         await expect(this.page.getByText('The statutory entitlement for this pay period is 1 hour.')).toBeVisible();
+        await expect(this.page.getByText('Employees cannot accrue more than 28 days (5.6 weeks) over the leave year.')).toBeVisible();
 
     }
 
 
 }
-
-// load page
-// check page loads
-// click button
-// check page loads
 

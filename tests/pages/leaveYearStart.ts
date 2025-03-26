@@ -1,23 +1,25 @@
 import { expect, type Page } from '@playwright/test';
 import leaveYearStartPageContent from "../content/leaveYearStart";
+import { govPage } from './govPage';
 
-export class leaveYearStartPage {
+export class leaveYearStartPage extends govPage{
     readonly page: Page;
     private readonly pageTitle: string;
     private readonly pageTitleClass: string;
     private readonly errorMessage: RegExp;
     private readonly errorBoxId: string;
     private readonly buttonText: string;
-    private readonly url: string;
 
     constructor(page: Page) {
+        super(page);
         this.page = page;
         this.pageTitle = leaveYearStartPageContent.pageTitle;
         this.pageTitleClass = leaveYearStartPageContent.pageTitleClass;
-        this.url = leaveYearStartPageContent.url;
         this.errorMessage = leaveYearStartPageContent.errorMessage;
         this.errorBoxId = leaveYearStartPageContent.errorBoxId
         this.buttonText = leaveYearStartPageContent.buttonText
+        this.url = leaveYearStartPageContent.url;
+        this.h1Text = leaveYearStartPageContent.h1Text;
     }
 
     async checkPageLoads(): Promise<void> {

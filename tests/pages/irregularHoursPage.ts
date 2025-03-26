@@ -1,6 +1,6 @@
 import { expect, type Page } from '@playwright/test';
 
-export class IrregularHours {
+export class IrregularHoursPage {
     readonly page: Page;
     private readonly title: string;
     

@@ -16,7 +16,7 @@ export class leaveYearStartPage {
         this.pageTitleClass = leaveYearStartPageContent.pageTitleClass;
         this.url = leaveYearStartPageContent.url;
         this.errorMessage = leaveYearStartPageContent.errorMessage;
-        this.errorBoxId = leaveYearStartPageContent.errorBoxIdleave
+        this.errorBoxId = leaveYearStartPageContent.errorBoxId
         this.buttonText = leaveYearStartPageContent.buttonText
     }
 

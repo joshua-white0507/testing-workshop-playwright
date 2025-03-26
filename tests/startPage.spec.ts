@@ -1,5 +1,7 @@
 import { test as base } from "@playwright/test";
 import { StartPage } from "./pages/startPage";
+import startPageContent from "./content/startPageContent";
+
 
 const test = base.extend<{ start: StartPage }>({
     start: async ({ page }, use) => {
@@ -8,11 +10,16 @@ const test = base.extend<{ start: StartPage }>({
     }
 });
 
-test(`Find Calculate Holiday Entitlement`, async ({ start }) => {
-    await start.checkPageLoads();
+test(`Check ${startPageContent.pageTitle} page loads and has correct heading`, async ({ start }) => {
+    await start.checkPageHeading();
 });
 
-test(`Start button links to the correct page`, async ({ start }) => {
+test(`Check cookies message is present on ${startPageContent.pageTitle} page`, async ({ start }) => {
+    await start.checkCookieMessagePresent();
+});
+
+test(`Check footer is present on ${startPageContent.pageTitle} page`, async ({ start }) => {
+    await start.checkFooterPresent();
 });
 
 test(`Click start button`, async ({ start }) => {

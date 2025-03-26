@@ -10,7 +10,10 @@ export class StartPage extends govPage {
     constructor(page: Page) {
         super(page);
         this.page = page;
+        this.url = startPageContent.url
         this.title = `.govuk-heading-xl`;
+        this.h1Text = startPageContent.h1Text;
+        this.heading = startPageContent.heading;
     }
     async checkStartButtonPath(): Promise<void> {
         await this.page.goto('https://www.gov.uk/calculate-your-holiday-entitlement');
